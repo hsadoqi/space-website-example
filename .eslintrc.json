@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",                 // Ensures Next.js specific best practices and core web vital checks
+    "eslint:recommended",                   // Enforces recommended ESLint rules
+    "plugin:@typescript-eslint/recommended",// Uses recommended rules from @typescript-eslint
+    "plugin:prettier/recommended"           // Integrates Prettier with ESLint, ensuring formatting rules are enforced
+  ],
+  "plugins": [
+    "@typescript-eslint",                   // Adds TypeScript specific linting rules
+    "prettier"                              // Integrates Prettier for code formatting
+  ],
+  "parser": "@typescript-eslint/parser",    // Uses TypeScript parser for ESLint
+  "parserOptions": {
+    "ecmaVersion": "latest",                // Use the latest ECMAScript version
+    "sourceType": "module",                 // Allows using ES modules
+    "ecmaFeatures": {
+      "jsx": true                           // Enables linting for JSX
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",           // Enforces Prettier formatting as ESLint errors
+    "@typescript-eslint/no-unused-vars": [
+      "error", { "argsIgnorePattern": "^_" } // Ignoring unused variables prefixed with _
+    ],
+    "react/react-in-jsx-scope": "off",      // React 17+ JSX does not require React to be in scope
+    "react/jsx-uses-react": "off",          // Disable React JSX usage checks (since React 17+)
+    "react/jsx-uses-vars": "error"          // Prevent variables used in JSX from being marked as unused
+  },
+  "settings": {
+    "react": {
+      "version": "detect"                   // Automatically detects the React version to use
+    }
+  },
+  "env": {
+    "browser": true,                        // Browser global variables
+    "es2021": true                          // Adds all ECMAScript 2021 globals
+  }
 }
+
