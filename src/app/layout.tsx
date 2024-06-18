@@ -1,4 +1,4 @@
-import { Header, MainContent, Footer } from '@/components';
+import { Header, Hero, MainContent, Footer } from '@/components';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-screen antialiased`}>
         <Header />
+        <Hero />
         <MainContent>
           {children}
         </MainContent>
