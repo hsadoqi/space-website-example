@@ -1,7 +1,9 @@
 'use client';
 
 import React, { FC, useEffect, useState } from 'react';
+import { Navbar } from '../../ui';
 import clsx from 'clsx';
+
 
 const Header: FC = () => {
     const [isHeaderVisible, setIsHeaderVisible] = useState(false);
@@ -69,7 +71,7 @@ const Header: FC = () => {
                 }
               )}
             >
-                I am a header
+                <Navbar />
             </header>
         </>
     )
