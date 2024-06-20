@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '../src/styles/globals.css';
 
 const preview: Preview = {
@@ -10,8 +11,17 @@ const preview: Preview = {
       },
     },
   },
-
   tags: ["autodocs"]
 };
 
 export default preview;
+
+export const decorators = [
+  withThemeByDataAttribute({
+    themes: {
+      light: 'light',
+      dark: 'dark',
+    },
+    defaultTheme: 'light',
+  })
+];
